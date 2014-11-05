@@ -1,0 +1,5 @@
+# SublimeText files
+*.sublime-*
+
+# Zeus
+.zeus.sock
