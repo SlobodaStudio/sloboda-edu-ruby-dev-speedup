@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" href="../reveal.js/css/reveal.min.css">
     <link rel="stylesheet" href="../reveal.js/css/theme/night.css" id="theme">
-    <link rel="stylesheet" href="custom.css" id="theme">
+    <link rel="stylesheet" href="custom.css">
 
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
@@ -65,7 +65,7 @@
           <h2>Почему не стоит использовать Spork?</h2>
           <p>
             <ul>
-              <li class="fragment">другие средства предоставляют больше возможностей</li>
+              <li class="fragment">другие инструменты (Zeus, Spring) предоставляют больше возможностей</li>
               <li class="fragment">проект не поддерживается уже длительное время</li>
             </ul>
           </p>
@@ -97,11 +97,59 @@
             </p>
           </section>
           <section>
-            <h2>Еще и тесты: zeus rspec</h2>
+            <h2>Еще и тесты: <code>zeus rspec</code></h2>
+            <p>
+              Благодаря простой команде <code>zeus rspec</code> есть возможность выполнять тесты намного быстрее
+            </p>
           </section>
         </section>
 
+        <section>
+          <section>
+            <h2>Spring</h2>
+            <p>
+              Та же модель клиент-сервер
+            </p>
+            <p>
+              <ul>
+                <li class="fragment">Сначала необходимо сгенерировать binstubs: <code>bundle exec spring binstub --all</code></li>
+                <li class="fragment">Cервер запускается неявно при первом вызове любого скрипта из <code>bin</code></li>
+                <li class="fragment">При следующем вызове любого скрипта из <code>bin</code> неявно создается клиент</li>
+                <li class="fragment">Клиент &laquo;универсальный&raquo; - создается по одному клиенту на <code>development</code> или <code>test</code> окружение, клиент выполняет команды</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Базовые команды Spring</h2>
+            <p>
+              <ul>
+                <li class="fragment"><code>status</code></li>
+                <li class="fragment"><code>binstubs</code></li>
+                <li class="fragment"><code>stop</code></li>
+                <li class="fragment"><code>rails {console, server, runner, destroy}</code></li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Spring и RSpec</h2>
+            <p>
+              <ul>
+                <li class="fragment"><code>bin/rake test spec</code></li>
+              </ul>
+            </p>
+          </section>
+        </section>
 
+        <section>
+          <h2>Сравнение Zeus vs Spring</h2>
+          <p>
+            <ul>
+              <li class="fragment">Zeus проще перезапускать, но для этого нужна отдельная консоль</li>
+              <li class="fragment">Со Spring не нужно помнить о разнице между &laquo;улучшенными&raquo; и стандартными командами</li>
+              <li class="fragment">Spring имеет лучшую поддержку, т.к. создан авторами Rails</li>
+            </ul>
+          </p>
+        </section>
 
         <!-- Example of nested vertical slides -->
         <section>
