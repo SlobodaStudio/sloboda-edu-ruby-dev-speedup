@@ -35,7 +35,7 @@
 1.4.2 spring status
 1.4.3 rails c: первый запуск, выход, проверка spring status, второй запуск
 1.4.4 rails s
-1.4.5 bin/rake test spec
+1.4.5 bin/rake test spec; после прогона тестов проверить spring status - должен быть запущен клиент test environment
 
 1.5 Сравнение Zeus и Spring
 
