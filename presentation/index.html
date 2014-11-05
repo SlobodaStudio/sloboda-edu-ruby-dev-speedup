@@ -73,14 +73,15 @@
 
         <section>
           <section>
-            <h2>Zeus: что это?</h2>
+            <h2>Zeus</h2>
             <p>
-              Zeus построен по модели клиент-сервер
+              <a href="https://github.com/burke/zeus">https://github.com/burke/zeus</a>
             </p>
             <p>
               <ul>
+                <li class="fragment">Zeus построен по модели клиент-сервер</li>
                 <li class="fragment">сервер загружает <code>development</code> и <code>test</code> окружения Rails</li>
-                <li class="fragment">клиент выполняет конкретную Rails команду</li>
+                <li class="fragment">клиент выполняет конкретную Rails команду, обращаясь к экземпляру Rails, загруженному в память сервера</li>
               </ul>
             </p> 
           </section>
@@ -108,14 +109,15 @@
           <section>
             <h2>Spring</h2>
             <p>
-              Та же модель клиент-сервер
+              <a href="https://github.com/burke/zeus">https://github.com/rails/spring</a>
             </p>
             <p>
               <ul>
-                <li class="fragment">Сначала необходимо сгенерировать binstubs: <code>bundle exec spring binstub --all</code></li>
-                <li class="fragment">Cервер запускается неявно при первом вызове любого скрипта из <code>bin</code></li>
-                <li class="fragment">При следующем вызове любого скрипта из <code>bin</code> неявно создается клиент</li>
-                <li class="fragment">Клиент &laquo;универсальный&raquo; - создается по одному клиенту на <code>development</code> или <code>test</code> окружение, клиент выполняет команды</li>
+                <li class="fragment">та же модель клиент-сервер</li>
+                <li class="fragment">сначала необходимо сгенерировать binstubs: <code>bundle exec spring binstub --all</code></li>
+                <li class="fragment">сервер запускается неявно при первом вызове любого скрипта из <code>bin</code></li>
+                <li class="fragment">при следующем вызове любого скрипта из <code>bin</code> неявно создается клиент</li>
+                <li class="fragment">клиент &laquo;универсальный&raquo; - создается по одному клиенту на <code>development</code> или <code>test</code> окружение, клиент выполняет команды</li>
               </ul>
             </p>
           </section>
@@ -127,6 +129,56 @@
                 <li class="fragment"><code>binstubs</code></li>
                 <li class="fragment"><code>stop</code></li>
                 <li class="fragment"><code>rails {console, server, runner, generate, destroy}</code></li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>Spring и RSpec</h2>
+            <p>
+              <ul>
+                <li class="fragment"><code>bin/rake test spec</code></li>
+              </ul>
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <h2>Сравнение Zeus vs Spring</h2>
+          <p>
+            <ul>
+              <li class="fragment">Zeus проще перезапускать, но для этого нужна отдельная консоль</li>
+              <li class="fragment">Zeus очень гибкий в конфигурации, можно определять свои команды (см. <a href="https://github.com/burke/zeus/blob/master/docs/ruby/modifying.md">Modifying the boot process</a> на github Zeus); Spring умеет только команды Rails</li>
+              <li class="fragment">со Spring не нужно помнить о разнице между &laquo;улучшенными&raquo; и стандартными командами</li>
+              <li class="fragment">Spring имеет лучшую поддержку, т.к. создан авторами Rails</li>
+            </ul>
+          </p>
+        </section>
+
+        <section>
+          <section>
+            <h2>Guard &amp; friends</h2>
+          </section>
+          <section>
+            <h2>Guard</h2>
+            <p>
+              <ul>
+                <li class="fragment">мониторит изменения в файлах проекта и выполняет при их обнаружении нужные действия</li>
+                <li class="fragment">эти действия определяются плагинами к Guard</li>
+                <li class="fragment">Guard - это консоль с командами</li>
+                <li class="fragment">поддержка различных notifiers</li>
+              </ul>
+            </p>
+          </section>
+          <section>
+            <h2>guard-rspec</h2>
+            <p>
+              Запуск только нужных тестов по изменениям в соответствующих им файлах
+            </p>
+            <p>
+              <ul>
+                <li class="fragment">добавляет свою секцию в Guardfile</li>
+                <li class="fragment">гибкая в конфигурации</li>
+                <li class="fragment">необходимо отключить <code>require 'rspec/autorun'</code> после установки</li>
               </ul>
             </p>
           </section>
