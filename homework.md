@@ -13,7 +13,7 @@ Zeus
 * Применить миграции
 * Запустить `rails console` через `zeus` и поиграться с созданной моделью
 * Установить в приложении `rspec` и сгенерировать нужные для его работы файлы
-* Создать тестовую спеку (самую простую, можно для созданной модели; замечены баги в работе `shoulda-matchers` и `zeus` + `rspec`, поэтому не ипспользуйте их) _Если никак не можете настроить для нормальной работы spec_helper.rb и rails_helper.rb, удалите rails_helper.rb, скачайте spec_helper.rb [отсюда](https://github.com/SlobodaStudio/sloboda-edu-ruby-dev-speedup/blob/master/sample_app/spec/spec_helper.rb) и используйте только его_
+* Создать тестовую спеку (самую простую, можно для созданной модели; замечены баги в работе `shoulda-matchers` и `zeus` + `rspec`, поэтому не используйте их) _Если никак не можете настроить для нормальной работы spec_helper.rb и rails_helper.rb, удалите rails_helper.rb, скачайте spec_helper.rb [отсюда](https://github.com/SlobodaStudio/sloboda-edu-ruby-dev-speedup/blob/master/sample_app/spec/spec_helper.rb) и используйте только его_
 * Прогнать тесты с помощью `zeus rspec spec`
 
 Spring
